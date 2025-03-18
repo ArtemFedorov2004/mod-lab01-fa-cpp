@@ -100,6 +100,6 @@ unsigned int faStr3(const char *str) {
         return 0;
     }
 
-    double avgLen = static_cast<double>(numberOfLettersInWords) / wordCount;
+    double avgLen = static_cast<double>(numberOfLettersInWords) / numberOfWords;
     return static_cast<unsigned int>(std::round(avgLen));
 }
