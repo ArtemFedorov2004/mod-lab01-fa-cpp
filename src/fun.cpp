@@ -52,12 +52,11 @@ unsigned int faStr2(const char* str) {
             if (!isSymbolInWord) {
                 isSymbolInWord = true;
                 isFirstLetterUpperLatin = isUpperLatinLetter(str[i]);
-            }
-            else {
+            } else {
                 if (isOtherLettersLowerLatin) {
                     isOtherLettersLowerLatin = isLowerLatinLetter(str[i]);
                 }
-            }            
+            }
         }
         if (str[i] == ' ' && isSymbolInWord) {
             if (isFirstLetterUpperLatin && isOtherLettersLowerLatin) {
