@@ -2,13 +2,14 @@
 #include "fun.h"
 #include <cctype>
 #include <cmath>
+#include <cstring>
 
 unsigned int faStr1(const char *str) {
     bool isSymbolInWord = false;
     bool isWordHasNumber = false;
     unsigned int count = 0;
 
-    for (size_t i = 0; i < str.length(); i++) {
+    for (size_t i = 0; i < std::strlen(str); i++) {
         if (str[i] != ' ') {
             if (!isSymbolInWord) {
                 isSymbolInWord = true;
@@ -46,7 +47,7 @@ unsigned int faStr2(const char *str) {
     bool isSymbolInWord = false;
     unsigned int count = 0;
 
-    for (size_t i = 0; i < str.length(); i++) {
+    for (size_t i = 0; i < std::strlen(str); i++) {
         if (str[i] != ' ' && !isSymbolInWord) {
             isSymbolInWord = true;
             isFirstLetterUpperLatin = isUpperLatinLetter(str[i]) == true;
@@ -78,7 +79,7 @@ unsigned int faStr3(const char *str) {
     int numberOfLettersInWords = 0;
     int numberOfWords = 0;
 
-    for (size_t i = 0; i < str.length(); i++) {
+    for (size_t i = 0; i < std::strlen(str); i++) {
         if (str[i] != ' ' && !isSymbolInWord) {
             isSymbolInWord = true;
             numberOfLettersInWords++;
