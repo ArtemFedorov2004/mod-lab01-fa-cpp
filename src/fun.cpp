@@ -82,11 +82,8 @@ unsigned int faStr3(const char *str) {
     int numberOfWords = 0;
 
     for (size_t i = 0; i < std::strlen(str); i++) {
-        if (str[i] != ' ' && !isSymbolInWord) {
+        if (str[i] != ' ') {
             isSymbolInWord = true;
-            numberOfLettersInWords++;
-        }
-        if (str[i] != ' ' && isSymbolInWord) {
             numberOfLettersInWords++;
         }
         if (str[i] == ' ' && isSymbolInWord) {
