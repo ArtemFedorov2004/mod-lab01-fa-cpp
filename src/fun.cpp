@@ -1,6 +1,7 @@
 // Copyright 2022 UNN-IASR
 #include "fun.h"
 #include <cctype>
+#include <cmath>
 
 unsigned int faStr1(const char *str) {
     bool isSymbolInWord = false;
