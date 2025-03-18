@@ -15,7 +15,7 @@ unsigned int faStr1(const char *str) {
             }
             if (!isWordHasNumber) {
                 isWordHasNumber = std::isdigit(str[i]);
-            }            
+            }
         } else {
             if (isSymbolInWord && !isWordHasNumber) {
                 count++;
@@ -57,7 +57,7 @@ unsigned int faStr2(const char *str) {
             }
         }
         if (str[i] == ' ' && isSymbolInWord) {
-            if (isFirstLetterUpperLatin && isOtherLettersLowerLatin){
+            if (isFirstLetterUpperLatin && isOtherLettersLowerLatin) {
                 count++;
             }
             isSymbolInWord = false;
