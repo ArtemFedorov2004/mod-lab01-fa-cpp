@@ -34,28 +34,30 @@ unsigned int faStr1(const char *str) {
 }
 
 bool isUpperLatinLetter(char c) {
-    return (c >= 'A' && c <= 'Z');
+    return std::isupper(c) && std::isalpha(c);
 }
 
 bool isLowerLatinLetter(char c) {
-    return (c >= 'a' && c <= 'z');
+    return std::islower(c) && std::isalpha(c);
 }
 
-unsigned int faStr2(const char *str) {
+unsigned int faStr2(const char* str) {
     bool isFirstLetterUpperLatin = true;
     bool isOtherLettersLowerLatin = true;
     bool isSymbolInWord = false;
     unsigned int count = 0;
 
     for (size_t i = 0; i < std::strlen(str); i++) {
-        if (str[i] != ' ' && !isSymbolInWord) {
-            isSymbolInWord = true;
-            isFirstLetterUpperLatin = isUpperLatinLetter(str[i]) == true;
-        }
-        if (str[i] != ' ' && isSymbolInWord) {
-            if (isOtherLettersLowerLatin) {
-                isOtherLettersLowerLatin = isLowerLatinLetter(str[i]) == true;
+        if (str[i] != ' ') {
+            if (!isSymbolInWord) {
+                isSymbolInWord = true;
+                isFirstLetterUpperLatin = isUpperLatinLetter(str[i]);
             }
+            else {
+                if (isOtherLettersLowerLatin) {
+                    isOtherLettersLowerLatin = isLowerLatinLetter(str[i]);
+                }
+            }            
         }
         if (str[i] == ' ' && isSymbolInWord) {
             if (isFirstLetterUpperLatin && isOtherLettersLowerLatin) {
